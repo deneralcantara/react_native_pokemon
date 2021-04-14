@@ -23,7 +23,7 @@ export default function Home({ navigation }) {
         dispatch(listPokemonsSuccess(res.data));
       })
       .catch(res => {
-          showAlert('Alerta', 'Erro ao obter pokemons');
+          Alert('Alerta', 'Erro ao obter pokemons');
           dispatch(listPokemonsFail('Erro ao obter pokemons.'));
           
       });  
@@ -44,7 +44,7 @@ export default function Home({ navigation }) {
       }
 
       {
-        !pokemons.loading && (
+        !pokemons.loading && pokemons.data && (
           <View style={{height: '100%'}}>
             <FlatList 
               data={pokemons.data.pokemons.results}

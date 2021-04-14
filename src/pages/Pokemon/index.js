@@ -44,7 +44,7 @@ export default function Pokemon({ route }) {
       }
 
       {
-        !pokemon.loading && (
+        !pokemon.loading && pokemon.data && (
           <Container contentContainerStyle={{alignItems: "center"}}>
             <Name>{pokemon.data.pokemon.name} - Sprites</Name>
             <Pictures>
